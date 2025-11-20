@@ -1,0 +1,307 @@
+:root {
+    --primary: #0078d7;
+    --secondary: #333;
+    --light: #f4f4f9;
+    --dark: #222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--light);
+    color: var(--secondary);
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #f4f4f9;
+}
+
+body.dark-mode .card,
+body.dark-mode .project,
+body.dark-mode .skill-category {
+    background: #1e1e1e;
+    color: #fff;
+}
+
+body.dark-mode .card h2,
+body.dark-mode .project h3,
+body.dark-mode .skill-category h3 {
+    color: #4dabf7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary);
+    margin-bottom: 15px;
+}
+
+h1 {
+    color: var(--primary);
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+h1 span {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--secondary);
+    font-weight: normal;
+}
+
+.social {
+    margin: 15px 0;
+}
+
+.social a {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.social a:hover {
+    color: var(--dark);
+}
+
+.download-btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background: #005bb5;
+    transform: translateY(-2px);
+}
+
+.download-btn i {
+    margin-right: 8px;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card h2 i {
+    font-size: 1.2rem;
+}
+
+/* Timeline */
+.timeline .item {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border-left: 2px solid var(--primary);
+    position: relative;
+}
+
+.timeline .item:before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--primary);
+    border-radius: 50%;
+    left: -7px;
+    top: 5px;
+}
+
+.timeline h3 {
+    font-size: 1.1rem;
+    color: var(--dark);
+}
+
+.timeline p {
+    color: #666;
+    margin: 5px 0;
+}
+
+.timeline ul {
+    margin-left: 20px;
+    color: #555;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.skill-category {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.skill-category h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-category ul {
+    list-style: none;
+}
+
+.skill-category li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Projects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+    overflow: hidden; /* Para que la imagen no sobresalga */
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* Estilos para imágenes de proyectos */
+.project img {
+    width: 100%;
+    height: auto; /* Altura automática según proporción */
+    max-height: 200px; /* Altura máxima */
+    /*height: 200px; /* Altura fija (ajusta este valor según necesites) */
+    object-fit: cover; /* Mantiene la proporción y recorta si es necesario */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #eee; /* Opcional: borde sutil */
+}
+
+/* Botones de proyectos */
+.project-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: var(--primary);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.project-link:hover {
+    background: #005bb5;
+}
+
+.project-link i {
+    margin-left: 5px;
+}
+
+.tech-tags {
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background: #e1f5fe;
+    color: #0078d7;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .skills-grid, .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 600px) {
+    .project img {
+        height: 150px; /* Altura más pequeña en móviles */
+    }
+}
